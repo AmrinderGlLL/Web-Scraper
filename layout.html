@@ -1,0 +1,40 @@
+<!-- layout.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <!-- Body section -->
+    <body>
+        <!-- Welcome message and button to navigate to analysis page -->
+        <h1>Welcome to the Home Page</h1>
+        <a href="/analysis"><button>Go to Analysis</button></a>
+    </body>
+</head>
+<body>
+    <!-- Header section -->
+    <header>
+        <!-- Title -->
+        <h1>Movie Reviews</h1>
+        <!-- Navigation links -->
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/analysis">Analysis</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Main content section -->
+    <main>
+        <!-- Block for content to be inserted by child templates -->
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer section -->
+    <footer>
+    </footer>
+</body>
+</html>

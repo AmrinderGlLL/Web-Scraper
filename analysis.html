@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis</title>
+    <!-- CSS styles -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .section {
+            background-color: #97b5e3;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        h2 {
+            color: #555;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #777;
+            margin-bottom: 5px;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 5px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        li:before {
+            content: "•";
+            margin-right: 5px;
+            color: #777;
+        }
+        .statistics {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        .stat-item {
+            background-color: #daa1d4;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        .words {
+            background-color: #ffffcc;
+            margin-top: 10px;
+        }
+        .statistics-section {
+            background-color: rgb(213, 219, 139);
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Page content -->
+    <div class="section">
+        <h1>Analysis of Reviews</h1>
+        
+        <!-- Section for word count statistics of reviews -->
+        <div class="section statistics-section">
+            <h2>Word Count Statistics</h2>
+            <div class="statistics">
+                <div class="stat-item">
+                    <h3>Average Review Length</h3>
+                    <!-- Display average words in a review-->
+                    <p>{{ word_count_stats['Average Word Count'] }} words</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Longest Review Length</h3>
+                    <!-- Display maximum word in a review -->
+                    <p>{{ word_count_stats['Maximum Word Count'] }} words</p>
+                </div>
+                <div class="stat-item">
+                    <h3>Shortest Review Length</h3>
+                    <!-- Display minimum word in a review -->
+                    <p>{{ word_count_stats['Minimum Word Count'] }} words</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Section for most frequent words -->
+        <div class="section words">
+            <h2>Most Frequent Words in Reviews</h2>
+            <ul>
+                <!-- Loop through frequent words and display them -->
+                {% for word, count in frequent_words.items() %}
+                    <li>{{ word }}: {{ count }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

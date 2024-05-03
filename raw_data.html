@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raw Data</title>
+    <!-- CSS styles -->
+    <style>
+        body {
+            background-color: #e8cb83; 
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1.4px solid hsl(0, 0%, 87%);
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .reviewNumber {
+            width: 10%; 
+        }
+        .review {
+            width: 90%; 
+        }
+    </style>
+</head>
+<body>
+    <!-- Page content -->
+    <h1>Dune 2 Reviews</h1>
+    <table>
+        <thead>
+            <tr>
+                <!-- Table headers -->
+                <th class="reviewNumber">Review Number</th>
+                <th class="review">Review</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Loop through raw data and display each review -->
+            {% for review in raw_data %}
+                <tr>
+                    <!-- Display review number and review text -->
+                    <td class="reviewNumber">{{ review.reviewNumber }}</td>
+                    <td class="review">{{ review.review }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
